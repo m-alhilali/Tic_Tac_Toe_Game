@@ -4,23 +4,23 @@ A classic **Tic-Tac-Toe** desktop application built using **C#** and **Windows F
 
 ## 🚀 Features
 
-* [cite_start]**Custom Player Selection:** Allows selecting which player starts the game (Player 1 or Player 2) via a ComboBox [cite: 394, 421-424].
-* [cite_start]**Dynamic UI Updates:** Real-time tracking of player turns and visual display of the game status[cite: 77, 245, 252].
-* [cite_start]**Win Detection Logic:** An automated system that checks for winning patterns across rows, columns, and diagonals [cite: 187-212].
-* [cite_start]**Visual Feedback:** Highlights the winning line in `GreenYellow` to clearly indicate the end of the match [cite: 142-144].
-* [cite_start]**Draw Detection:** Effectively handles "Draw" scenarios once all 9 moves are completed without a winner [cite: 274-283].
-* [cite_start]**Custom Graphics (GDI+):** Uses the `Paint` event and `Pen` class to draw the game grid lines directly on the form [cite: 287-326].
-* [cite_start]**Game Reset:** A dedicated function to clear the board, reset the play count, and restart the session [cite: 355-387].
+**Custom Player Selection:** Allows selecting which player starts the game (Player 1 or Player 2) via a ComboBox.
+**Dynamic UI Updates:** Real-time tracking of player turns and visual display of the game status.
+**Win Detection Logic:** An automated system that checks for winning patterns across rows, columns, and diagonals.
+**Visual Feedback:** Highlights the winning line in `GreenYellow` to clearly indicate the end of the match.
+**Draw Detection:** Effectively handles "Draw" scenarios once all 9 moves are completed without a winner .
+**Custom Graphics (GDI+):** Uses the `Paint` event and `Pen` class to draw the game grid lines directly on the form.
+**Game Reset:** A dedicated function to clear the board, reset the play count, and restart the session .
 
 ## 🛠️ Technical Implementation
 
 ### Core Components
-* [cite_start]**Enums & Structs:** Used `enum` for `enWinner` and `enPlayer` to maintain clean, readable code, and a `struct` called `sStateGame` to track the current state [cite: 26-61].
-* [cite_start]**Tag-Based Logic:** Utilizes the `.Tag` property of `Button` controls to identify the state of each cell ("X", "O", or "?")[cite: 128, 220, 350].
-* [cite_start]**Centralized Event Handling:** All game buttons share a single `button_Click` event, which casts the `sender` to a `Button` type for processing [cite: 334-335].
+**Enums & Structs:** Used `enum` for `enWinner` and `enPlayer` to maintain clean, readable code, and a `struct` called `sStateGame` to track the current state.
+**Tag-Based Logic:** Utilizes the `.Tag` property of `Button` controls to identify the state of each cell ("X", "O", or "?").
+**Centralized Event Handling:** All game buttons share a single `button_Click` event, which casts the `sender` to a `Button` type for processing.
 
 ### Graphics Logic
-[cite_start]The grid is rendered dynamically using the `Form1_Paint` method [cite: 287-326]:
+The grid is rendered dynamically using the `Form1_Paint` method:
 ```csharp
 // Example of the drawing logic used in the project
 e.Graphics.DrawLine(pen, 580, 100, 580, 400); // Vertical Line
